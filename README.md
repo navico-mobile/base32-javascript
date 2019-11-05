@@ -15,24 +15,24 @@ yarn install https://github.com/navico-mobile/base32-javascript.git
 In your code:
 
 ```javascript
-const base32 = require('base32')
+const base32 = require('@navico-mobile/base32');
 
 // simple api
 
-const encoded = base32.encode('some data to encode')
-const decoded = base32.decode(encoded)
+const encoded = base32.encode('some data to encode');
+const decoded = base32.decode(encoded);
 
 // streaming api
-this.encoder = new Base32.encoder()
+this.encoder = new Base32.encoder();
 this.dataCallback = function(chunk) {
-    this.emit(this.encoder(chunk))
+    this.emit(this.encoder(chunk));
 }
 this.closeCallback = function(chunk) {
-    this.emit(this.finish()) // flush any remaining bits
+    this.emit(this.finish()); // flush any remaining bits
 }
 
 // easy sha1 hash
-const hash = base32.sha1(some_data_to_hash) // DONE.
+const hash = base32.sha1(some_data_to_hash); // DONE.
 ```
 
 
