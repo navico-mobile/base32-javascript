@@ -1,7 +1,7 @@
 {
   "name": "@navico-mobile/base32",
   "description": "Base32 encoding and decoding",
-  "version": "1.0.0",
+  "version": "1.0.0-beta2",
   "author": "Navico",
   "homepage": "https://github.com/navico-mobile/base32-javascript",
   "repository": {
