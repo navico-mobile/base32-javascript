@@ -6,7 +6,7 @@ This implementation contains a simplified encoding scheme customized for Navico.
 
 ## Getting started
 
-In your shell, install with npm:
+In your shell, install with yarn:
 
 ```sh
 yarn install https://github.com/navico-mobile/base32-javascript.git
