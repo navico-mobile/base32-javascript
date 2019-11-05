@@ -8,14 +8,19 @@
     "type": "git",
     "url": "git://github.com/navico-mobile/base32-javascript.git"
   },
-  "main": "./src/base32",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint ./src/*"
+  },
+  "main": "./src/index.js",
   "engines": {
     "node": ">0.10"
   },
-  "dependencies": {
-    "optimist": ">=0.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "vows": ">=0.5.6"
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "jest": "^24.9.0"
   }
 }

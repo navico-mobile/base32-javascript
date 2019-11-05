@@ -2,7 +2,7 @@
 
 Base 32 is between hexadecimal notation and Base 64 encoding. It's intended to be a **human-friendly** -- you don't have to worry about punctuation, capitalization, or letters/numbers that are easy to confuse, making it easier to transmit in handwriting or over the phone.
 
-This implementation contains a simplified encoding scheme customized for Navico.
+This implementation contains a simplified encoding scheme customized for Navico and contains no external dependencies.
 
 ## Getting started
 
