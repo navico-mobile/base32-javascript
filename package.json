@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git://github.com/navico-mobile/base32-javascript.git"
   },
-  "main": "./lib/base32",
+  "main": "./src/base32",
   "engines": {
     "node": ">0.10"
   },
