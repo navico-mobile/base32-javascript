@@ -1,8 +1,8 @@
 {
-  "name": "base32",
+  "name": "@navico-mobile/base32",
   "description": "Base32 encoding and decoding",
   "version": "1.0.0",
-  "author": "Kristian Fallrø",
+  "author": "Navico",
   "homepage": "https://github.com/navico-mobile/base32-javascript",
   "repository": {
     "type": "git",
@@ -22,5 +22,12 @@
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-import": "^2.18.2",
     "jest": "^24.9.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/navico-mobile/base32-javascript/issues"
+  },
+  "keywords": [
+    "base32"
+  ],
+  "license": "MIT"
 }
