@@ -118,7 +118,6 @@
       this.readChar(input[i]);
     }
 
-
     return this.output;
   };
 
@@ -134,56 +133,9 @@
     return output;
   }
 
-  let crypto;
-  let fs;
-
-  function sha1(input, cb) {
-    if (typeof crypto === 'undefined') crypto = require('crypto');
-    const hash = crypto.createHash('sha1');
-    hash.digest = (function digestHash(digest) {
-      return function encodeHash() {
-        return encode(digest.call(this, 'binary'));
-      };
-    }(hash.digest));
-    if (cb) { // streaming
-      if (typeof input === 'string' || Buffer.isBuffer(input)) {
-        try {
-          return cb(null, sha1(input));
-        } catch (err) {
-          return cb(err, null);
-        }
-      }
-      if (typeof input.on !== 'function') return cb({ message: 'Not a stream!' });
-      input.on('data', (chunk) => { hash.update(chunk); });
-      input.on('end', () => { cb(null, hash.digest()); });
-      return undefined;
-    }
-
-    // non-streaming
-    if (input) {
-      return hash.update(input).digest();
-    }
-    return hash;
-  }
-  sha1.file = function file(filename, cb) {
-    if (filename === '-') {
-      process.stdin.resume();
-      return sha1(process.stdin, cb);
-    }
-    if (typeof fs === 'undefined') fs = require('fs');
-    return fs.stat(filename, (err, stats) => {
-      if (err) return cb(err, null);
-      if (stats.isDirectory()) return cb({ dir: true, message: 'Is a directory' });
-      return sha1(require('fs').createReadStream(filename), cb);
-    });
-  };
-
   const base32 = {
-    Decoder,
-    Encoder,
     encode,
     decode,
-    sha1,
   };
 
   if (typeof window !== 'undefined') {
